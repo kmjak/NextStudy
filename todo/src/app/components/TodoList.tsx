@@ -7,7 +7,7 @@ interface TodoListProps {
 }
 
 
-const TodoList = ({ todos }: TodoListProps) => {
+const TodoList = async ({ todos }: TodoListProps) => {
     return (
         <ul>
             {todos.map((todo) => (
