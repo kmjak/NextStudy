@@ -16,8 +16,8 @@ export default function Home() {
     <main>
       <h1>Next.js login system</h1>
       {isRegister ? (<h3>Register</h3>) : (<h3>Login</h3>)}
-      <Form />
-      {isRegister ? (<button onClick={changeMode}>Login</button>) : (<button onClick={changeMode}>Register</button>)}
+      <Form isRegister={isRegister} />
+      {isRegister ? (<button onClick={changeMode} className="register-btn">Login</button>) : (<button onClick={changeMode} className="login-btn">Register</button>)}
     </main>
   );
 }

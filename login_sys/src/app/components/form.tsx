@@ -1,20 +1,49 @@
 "use client"
 import React, { FormEvent, useState } from "react";
-import { register } from "module";
 import { regisger } from "@/api";
+import { getAllUsers } from "@/api";
 import {v4 as uuidv4} from "uuid"
+import { useRouter } from 'next/navigation';
 
-export const Form = ()=>{
+interface FormProps {
+    isRegister:boolean;
+}
+
+export const Form = ({isRegister}:FormProps)=>{
     const [NAME,setName] = useState("");
     const [PASS,setPass] = useState("");
-    const submitBtn = async (e:FormEvent) => {
-        await regisger({id:uuidv4(),name:NAME,pass:PASS})
+    const router = useRouter();
+    const handleSubmit = async (e:FormEvent) => {
+        e.preventDefault();
+        if(!NAME || !PASS) {
+            return alert("Please fill in the form")
+        }
+        const users = await getAllUsers();
+        const isExist = users.find((user)=> user.name === NAME);
+        if(isRegister) {
+            if(isExist){
+                return alert("User already exist")
+            }
+            await regisger({id:uuidv4(),name:NAME,pass:PASS});
+            setName("");
+            setPass("");
+            return alert("User registered")
+        }
+        if(!isRegister) {
+            if(!isExist){
+                return alert("Failed to login")
+            }
+            if(isExist.pass !== PASS){
+                return alert("Failed to login")
+            }
+            router.push("/main");
+        }
     }
     return(
         <div>
-            <input type="text" onChange={(e:React.ChangeEvent<HTMLInputElement>)=> setName(e.target.value)}/>
-            <input type="text" onChange={(e:React.ChangeEvent<HTMLInputElement>)=> setPass(e.target.value)}/>
-            <button onClick={submitBtn}>submit</button>
+            <p><input type="text" onChange={(e:React.ChangeEvent<HTMLInputElement>)=> setName(e.target.value)} value={NAME} placeholder="Name"/></p>
+            <p><input type="text" onChange={(e:React.ChangeEvent<HTMLInputElement>)=> setPass(e.target.value)} value={PASS} placeholder="Pass"/></p>
+            <p><button onClick={handleSubmit}>submit</button></p>
         </div>
     )
 }

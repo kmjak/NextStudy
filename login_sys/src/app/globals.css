@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+main{
+    margin-top: 25vh;
+}
+h1{
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+h3{
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+.register-btn{
+    background: none;
+    border: none;
+    background-color: green;
+    color: white;
+    padding: 3px 5px;
+    margin-top: 50px;
+    font-size: 1.5rem;
+}
+.login-btn{
+    background: none;
+    border: none;
+    background-color: blue;
+    color: white;
+    padding: 3px 5px;
+    margin-top: 50px;
+    font-size: 1.5rem;
+}
+input{
+    text-align: left;
+    padding: 5px;
+    margin: 5px;
+    width: 200px;
+    border: 1px solid black;
+    font-size: 1.5rem;
+    border-radius: 5px;
+}
+button{
+    margin-top: 20px;
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+}
+p{
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+a{
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: blue;
+}
