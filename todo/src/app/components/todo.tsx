@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { useRouter } from 'next/navigation'; // import useRouter from next/navigation
+import { useRouter } from 'next/navigation';
 import { Task } from "@/types";
 import { editTask } from "@/api";
 import { del } from "@/api";
@@ -14,7 +14,7 @@ const Todo = function ({ todo }: TodoProps) {
     const ref = useRef<HTMLInputElement>(null)
     const [isEditting, setIsEditting] = useState(false);
     const [newTask, setNewTask] = useState(todo.content);
-    const router = useRouter(); // useRouterフックを使用
+    const router = useRouter();
 
     useEffect(()=>{
         if(isEditting){
