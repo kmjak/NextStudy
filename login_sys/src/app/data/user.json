@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "root",
+      "pass": "toor"
+    },
+    {
+      "id": "31882ef3-20d1-4324-ac54-3e35814ba2c1",
+      "name": "test",
+      "pass": "user"
+    }
+  ]
+}

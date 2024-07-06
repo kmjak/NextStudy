@@ -1,0 +1,12 @@
+npx create-next-app@latest プロジェクト名
+プロジェクトの作成
+
+npm run dev 
+Next.jsの起動
+
+npm i json-server
+json-serverの作成
+-> package.jsonに以下を記入
+"json-server": "json-server --watch jsonファイルまでのパス --port 3001"
+
+npm run json-server
