@@ -1,13 +1,5 @@
-import React from 'react';
+"use client";
 
-const Main: React.FC = () => {
-    return (
-        <main>
-            <h1>Main Page</h1>
-            <p>Welcome to the main page!</p>
-            <a href="../">Go Back</a>
-        </main>
-    );
-};
-
-export default Main;
+export default function Main() {
+    return <a href="/">Go back</a>;
+}
