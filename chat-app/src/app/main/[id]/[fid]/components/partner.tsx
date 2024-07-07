@@ -28,7 +28,7 @@ export const Partner: React.FC<PartnerProps> = ({ myId, fId }) => {
     }, [fId]);
     return (
         <div>
-            <p>Friend: {user ? user.name : 'Loading...'}</p>
+            <p>Friend Name : [{user ? user.name : 'Loading...'}]</p>
         </div>
     );
 };
