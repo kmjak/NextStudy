@@ -2,6 +2,8 @@
 import { useRouter } from "next/navigation";
 import React, { FormEvent, useState } from "react";
 import { getAllUsers } from "@/api";
+import { registerUser } from "@/api";
+import { v4 as uuidv4 } from "uuid";
 
 interface ModeProps {
     mode: string;
@@ -26,13 +28,14 @@ export const Form = (mode:ModeProps) => {
             if (isExist) {
                 return alert("User already exist");
             }
+            registerUser({id:uuidv4(),name:name,pass:password})
             return alert("User registered");
         }
         if (mode.mode === "Login") {
             if (isExist) {
                 if(isExist.pass == password){
-                    router.push("/main");
-                    return alert("Login successful");
+                    router.push(`/main/${isExist.id}`);
+                    return;
                 }
             }
             return alert("Failed to login");

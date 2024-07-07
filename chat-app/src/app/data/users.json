@@ -1,9 +1,19 @@
 {
-    "users":[
-        {
-            "id": "1",
-            "name":"root",
-            "pass":"toor"
-        }
-    ]
+  "users": [
+    {
+      "id": "1",
+      "name": "root",
+      "pass": "toor"
+    },
+    {
+      "id": "4bfe841c-b4b9-4259-9b2f-a09f1b572252",
+      "name": "a",
+      "pass": "a"
+    },
+    {
+      "id": "4e78c4c2-4858-416e-9e1f-c3b01420572d",
+      "name": "t",
+      "pass": "t"
+    }
+  ]
 }
