@@ -1,0 +1,28 @@
+{
+    "words":[
+        {
+            "id": "1",
+            "word": "sushi"
+        },
+        {
+            "id": "2",
+            "word": "yakiniku"
+        },
+        {
+            "id": "3",
+            "word": "kame"
+        },
+        {
+            "id": "4",
+            "word": "hako"
+        },
+        {
+            "id": "5",
+            "word": "yasai"
+        },
+        {
+            "id": "",
+            "word": "daiyamondo"
+        }
+    ]
+}
