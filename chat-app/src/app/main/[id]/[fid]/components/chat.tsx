@@ -8,19 +8,15 @@ interface IdProps {
 
 export const Chat = ({ myId, fId }: IdProps) => {
     const [messages, setMessages] = useState<any[]>([]);
-
-    useEffect(() => {
-        const fetchMessages = async () => {
-            try {
-                const msgs = await getMessages();
-                setMessages(msgs);
-            } catch (error) {
-                console.error('Error fetching messages:', error);
-            }
-        };
-
-        fetchMessages();
-    }, []);
+    const fetchMessages = async () => {
+        try {
+            const msgs = await getMessages();
+            setMessages(msgs);
+        } catch (error) {
+            console.error('Error fetching messages:', error);
+        }
+    };
+    fetchMessages();
 
     const mId = Array.isArray(myId) ? myId.join(',') : myId.toString();
     const pId = Array.isArray(fId) ? fId.join(',') : fId.toString();
