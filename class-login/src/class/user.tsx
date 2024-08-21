@@ -6,6 +6,7 @@ class User {
   private defaultPass = "pass";
   private name = "";
   private pass = "";
+  private mode = "login";
 
   setName(name: string) {
     this.name = name;
@@ -15,8 +16,20 @@ class User {
     this.pass = pass;
   }
 
+  changeMode() {
+    this.mode = this.mode === "login" ? "signup" : "login";
+  }
+
   login() {
-    return this.defaultName === this.name && this.defaultPass === this.pass;
+    if(this.defaultName === this.name && this.defaultPass === this.pass){
+      if(this.mode === "login"){
+        return "login";
+      }else{
+        return "signup";
+      }
+    }else{
+      return "error";
+    }
   }
 }
 

@@ -16,9 +16,10 @@ export const Form = () => {
         placeholder="パスワード"
         onChange={(e) => user.setPass(e.target.value)}
       />
-      <button onClick={() => alert(user.login() ? "ログイン成功" : "ログイン失敗")}>
+      <button onClick={() => alert(user.login())}>
         ログイン
       </button>
+      <button onClick={() => user.changeMode()}>モードを切り替え</button>
     </div>
   );
 };
