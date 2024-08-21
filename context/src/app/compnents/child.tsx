@@ -1,5 +1,5 @@
 let i = 1;
-export function ChildComponent({ onDataPass }: { onDataPass: (data: string) => void }) {
+export const ChildComponent = ({ onDataPass }: { onDataPass: (data: string) => void }) => {
   const sendDataToParent = () => {
     const data = i.toString();
     i++;

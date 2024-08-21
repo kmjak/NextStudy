@@ -12,7 +12,7 @@ export const Friend = async ({myId}:MyIdProps) => {
             {users.map((user: { id: string; name: string; }) => {
                 if (user.id !== myId) {
                     return (
-                        <p><a href={`/main/${myId}/${user.id}`}>
+                        <p key={user.id}><a href={`/main/${myId}/${user.id}`}>
                             {user.name}
                         </a></p>
                     );
