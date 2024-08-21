@@ -5,7 +5,6 @@ export default function Page() {
   return (
     <UserProvider>
       <div>
-        <h1>ログイン</h1>
         <Form />
       </div>
     </UserProvider>
