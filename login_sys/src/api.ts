@@ -1,5 +1,4 @@
 import { userType } from "./types"
-import { cache } from "react";
 export const regisger = async (data:userType):Promise<userType> => {
     const res = await fetch("http://localhost:3001/users",{
         method:"POST",

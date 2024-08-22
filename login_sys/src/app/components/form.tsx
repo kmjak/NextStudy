@@ -1,4 +1,3 @@
-"use client"
 import React, { FormEvent, useState } from "react";
 import { regisger } from "@/api";
 import { getAllUsers } from "@/api";
@@ -40,10 +39,10 @@ export const Form = ({mode}:FormProps)=>{
         }
     }
     return(
-        <div>
+        <form onSubmit={handleSubmit}>
             <p><input type="text" onChange={(e:React.ChangeEvent<HTMLInputElement>)=> setName(e.target.value)} value={NAME} placeholder="Name"/></p>
             <p><input type="text" onChange={(e:React.ChangeEvent<HTMLInputElement>)=> setPass(e.target.value)} value={PASS} placeholder="Pass"/></p>
             <p><button onClick={handleSubmit}>submit</button></p>
-        </div>
+        </form>
     )
 }
